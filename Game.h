@@ -17,6 +17,8 @@ class Game
 		int mainGame();
 	protected:
 		void createWindow(sf::Vector2u size);
+		void event();
+		void drawing();
 
 	private :
 		int m_sizeX;

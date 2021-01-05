@@ -4,25 +4,29 @@
 int Game::mainGame(){
 	while (m_window.isOpen())
 	{
-		while (m_window.pollEvent(m_event))	//TU peux gerer les evenement
-											//dans une autre fontion ce que je recommande
-		{
-			//ici on recupere tout les evenement SELON lactivitee
-			if (m_event.type == sf::Event::Closed)
-			{
-				m_window.close();
-			}
-		}
-	m_window.clear();
-
-	//ici on dessine tout les autre objets
-
-	m_window.display();
+		event();
+		drawing();
 	}
 	return 0;
 }
 
+// ICI tout va se dessiner
+void Game::drawing(){
+	m_window.clear();
 
+	m_window.display();
+}
+
+// ICI tout les evenements
+void Game::event(){
+	while (m_window.pollEvent(m_event))
+	{
+		if (m_event.type == sf::Event::Closed)
+		{
+			m_window.close();
+		}
+	}
+}
 
 // CONSTRUCTOR
 Game::Game()
