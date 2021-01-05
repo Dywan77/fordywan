@@ -1,5 +1,11 @@
+#ifndef __GAME_H__
+#define __GAME_H__
+
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include "Menu.h"
+
+enum Activity {MENU, PAUSE, GAME};
 
 class Game
 {
@@ -21,8 +27,12 @@ class Game
 		void drawing();
 
 	private :
+		Menu menu;
+		Activity m_activity;
 		int m_sizeX;
 		int m_sizeY;
 		sf::Event m_event;
 		sf::RenderWindow m_window;
 };
+
+#endif
