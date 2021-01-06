@@ -23,6 +23,7 @@ class Game
 	private :
 		Menu menu;
 		Activity m_activity;
+		sf::Mouse m_mouse;
 		int m_sizeX;
 		int m_sizeY;
 		sf::Event m_event;

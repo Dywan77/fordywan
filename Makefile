@@ -8,3 +8,6 @@ all: ${SRC:.cpp=.o}
 
 clean:
 	rm -rf ${APP}
+
+mrproper: clean
+	rm -rf *.o

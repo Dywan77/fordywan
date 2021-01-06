@@ -30,6 +30,11 @@ void Game::event(){
 	while (m_window.pollEvent(m_event))
 	{
 		if(m_activity == MENU){
+			if(sf::Mouse::isButtonPressed(sf::Mouse::Left))
+			{
+				if(menu.onClick(m_mouse.getPosition(m_window)))
+					m_activity = GAME;
+			}
 		}
 		else if(m_activity == GAME){
 		}
