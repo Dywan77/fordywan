@@ -14,12 +14,6 @@ class Game
 		Game(unsigned inputSizeX, unsigned inputSizeY);
 		
 
-		int getSizeXW();
-		int getSizeYW();
-
-		bool setSizeXW(int setX);
-
-		bool setSizeYW(int setY);
 		int mainGame();
 	protected:
 		void createWindow(sf::Vector2u size);

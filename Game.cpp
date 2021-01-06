@@ -53,6 +53,12 @@ Game::Game()
 	m_window.setFramerateLimit(60);
 }
 
+Game::Game(unsigned inputSizeX, unsigned inputSizeY)
+{
+	createWindow(sf::Vector2u(inputSizeX, inputSizeY));
+	m_window.setFramerateLimit(60);
+}
+
 
 //PROTECTED
 void Game::createWindow(sf::Vector2u size){
