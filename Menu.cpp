@@ -3,6 +3,7 @@
 Menu::Menu(){
 	m_t_background.loadFromFile("image/background.png");
 	m_s_background.setTexture(m_t_background);
+	m_s_background.setColor(sf::Color(255,150,255));
 
 	m_t_ange.loadFromFile("image/ange.png");
 	m_s_ange.setTexture(m_t_ange);
