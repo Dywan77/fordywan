@@ -2,20 +2,20 @@
 
 Cube::Cube()
 {
-	m_texture.loadFromFile("images/jewel.png");
+	m_texture.loadFromFile("image/jewel.png");
 	m_sprite.setTexture(m_texture);
 	m_sprite.setTextureRect(sf::IntRect(0, 0, 32, 32));
 }
 Cube::Cube(int index)
 {
-	m_texture.loadFromFile("images/jewel.png");
+	m_texture.loadFromFile("image/jewel.png");
 	m_sprite.setTexture(m_texture);
 	m_sprite.setTextureRect(sf::IntRect(index * 32, 0, 32, 32));
 	m_index = index;
 }
 Cube::Cube(sf::Vector2f position, int index)
 {
-	m_texture.loadFromFile("images/jewel.png");
+	m_texture.loadFromFile("image/jewel.png");
 	m_sprite.setTexture(m_texture);
 	m_sprite.setPosition(position);
 	this->changeID(index);

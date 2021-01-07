@@ -3,6 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include "After.h"
 
 class Scene
 {
@@ -16,8 +17,6 @@ class Scene
 		sf::Texture m_t_grille;
 		sf::Sprite m_s_grille;
 		
-		//sf::Texture m_t_after;
-		//sf::Sprite m_s_after;
 		//afterselector
 		//cursorselector
 		sf::Texture m_t_background;
@@ -26,6 +25,8 @@ class Scene
 		sf::Sprite m_s_spriteWait;
 		sf::Texture m_t_spriteWait;
 		bool m_bool_waitbutton = true;
+
+		After m_after;
 
 };
 
