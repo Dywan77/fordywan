@@ -100,8 +100,9 @@ Game::Game(unsigned inputSizeX, unsigned inputSizeY)
 
 //PROTECTED
 void Game::createWindow(sf::Vector2u size){
-	m_window.create(sf::VideoMode(size.x, size.y), "SFML works!");
+	m_window.create(sf::VideoMode(size.x, size.y), "<|||||| COLLUMNS ||||||>");
 	m_window.setPosition(sf::Vector2i(0, 0));
+
 	m_activity = MENU;
 	m_musique.playZone(MUSIQUEMENU);
 }
