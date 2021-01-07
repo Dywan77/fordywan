@@ -40,6 +40,10 @@ void Game::event(){
 		if(everyTicks(500))
 			menu.onSecond();
 	}
+	if(m_activity == GAME){
+		if(everyTicks(850))
+			m_scene.onSecond();
+	}
 
 	//EVENEMENT DE SFML
 	while (m_window.pollEvent(m_event))
@@ -52,6 +56,7 @@ void Game::event(){
 				if (m_event.key.code == sf::Keyboard::Enter)
 				{
 					m_activity = GAME;
+					m_musique.playZone(MUSIQUEOPTION);
 				}
 			}
 

@@ -9,6 +9,7 @@ class Scene
 	public:
 		Scene();
 		void drawing(sf::RenderWindow &window);
+		void onSecond();
 	protected:
 		void create();
 	private:
@@ -17,6 +18,10 @@ class Scene
 		//cursorselector
 		sf::Texture m_t_background;
 		sf::Sprite m_s_background;
+
+		sf::Sprite m_s_spriteWait;
+		sf::Texture m_t_spriteWait;
+		bool m_bool_waitbutton = true;
 
 };
 
