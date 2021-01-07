@@ -6,7 +6,8 @@
 
 enum e_musique{
 	MUSIQUEMENU = 0,
-	MUSIQUEJEUX = 1
+	MUSIQUEJEUX = 1,
+	MUSIQUEOPTION = 2
 };
 
 class Musique{
