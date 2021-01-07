@@ -13,8 +13,12 @@ class Scene
 	protected:
 		void create();
 	private:
-		//grille
-		//threeselector
+		sf::Texture m_t_grille;
+		sf::Sprite m_s_grille;
+		
+		//sf::Texture m_t_after;
+		//sf::Sprite m_s_after;
+		//afterselector
 		//cursorselector
 		sf::Texture m_t_background;
 		sf::Sprite m_s_background;
