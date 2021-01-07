@@ -6,6 +6,7 @@
 #include "oneverytime.h"
 #include "Menu.h"
 #include "Musique.h"
+#include "Scene.h"
 
 enum Activity {MENU, PAUSE, GAME};
 
@@ -31,7 +32,7 @@ class Game
 		sf::Event m_event;
 		sf::RenderWindow m_window;
 		Musique m_musique;
-
+		Scene m_scene;
 };
 
 #endif

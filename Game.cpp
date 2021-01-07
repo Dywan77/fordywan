@@ -21,6 +21,7 @@ void Game::drawing(){
 
 	//LES DESSIN EN JEUX
 	else if(m_activity == GAME){
+		m_scene.drawing(m_window);
 	}
 
 	//LES DESSINS DANS LA PAUSE
