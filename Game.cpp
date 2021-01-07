@@ -34,11 +34,17 @@ void Game::drawing(){
 
 // ICI tout les evenements
 void Game::event(){
+	//EVENEMENT NON SFML
+	if(m_activity == MENU){
+		if(everyTicks(500))
+			menu.onSecond();
+	}
+
+	//EVENEMENT DE SFML
 	while (m_window.pollEvent(m_event))
 	{
 		//EVENEMENT DANS LE MENU
 		if(m_activity == MENU){
-			
 			if(m_event.type == sf::Event::KeyPressed)
 			{
 				printf("entrer\n");

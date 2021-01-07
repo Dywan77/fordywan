@@ -3,6 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include "oneverytime.h"
 #include "Menu.h"
 
 enum Activity {MENU, PAUSE, GAME};

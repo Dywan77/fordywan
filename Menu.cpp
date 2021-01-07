@@ -22,7 +22,8 @@ void Menu::draw(sf::RenderWindow &window){
 	window.draw(m_s_background);
 	window.draw(m_s_title);
 	window.draw(m_s_ange);
-	window.draw(m_s_buttonStart);
+	if(m_affichageButtonStart)
+		window.draw(m_s_buttonStart);
 }
 //EVENT
 
@@ -32,4 +33,10 @@ int Menu::onClick(sf::Vector2i mousePosition){
 		return 1;  //le bouton est cliquer
 	}
 	return 0;// le bouton nest pas cliquer
+}
+void Menu::onSecond(){
+	if(m_affichageButtonStart)
+		m_affichageButtonStart = false;
+	else
+		m_affichageButtonStart =true;
 }
