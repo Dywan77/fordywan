@@ -4,13 +4,17 @@
 #include <SFML/Graphics.hpp>
 #include <time.h>
 
+enum Cubecouleur{
+	CJAUNE, CORANGE, CVERT, CMAUVE, CROUGE, CBLEU, CNULL
+};
+
 class Cube{
 
 	public:
 		Cube();
 		Cube(int index);
 		Cube(sf::Vector2f position, int index);
-		void draw(sf::RenderWindow *window);
+		void draw(sf::RenderWindow &window);
 		void changeID();
 		void changeID(int id);
 		int getID(){

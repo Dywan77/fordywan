@@ -6,6 +6,7 @@
 #include <iostream>
 #include "oneverytime.h"
 #include "After.h"
+#include "Grille.h"
 
 class Scene
 {
@@ -17,12 +18,10 @@ class Scene
 	protected:
 		void create();
 	private:
-		sf::Texture m_t_grille;
-		sf::Sprite m_s_grille;
 		sf::SoundBuffer m_buffer_song_lancement;
 		sf::Sound m_song_lancement;
-
-		//cursorselector
+		
+		Grille m_grille;
 		sf::Texture m_t_background;
 		sf::Sprite m_s_background;
 

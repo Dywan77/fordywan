@@ -20,9 +20,9 @@ Cube::Cube(sf::Vector2f position, int index)
 	m_sprite.setPosition(position);
 	this->changeID(index);
 }
-void Cube::draw(sf::RenderWindow *window)
+void Cube::draw(sf::RenderWindow &window)
 {
-	window->draw(m_sprite);
+	window.draw(m_sprite);
 }
 void Cube::changeID(int id)
 {

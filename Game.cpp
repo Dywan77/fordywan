@@ -75,7 +75,9 @@ void Game::event(){
 				if (m_event.key.code == sf::Keyboard::Enter)
 				{
 					if(m_scene.onPressEnter() == 1)
+					{
 						m_musique.playZone(MUSIQUEJEUX);
+					}
 				}
 			}
 		}
