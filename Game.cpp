@@ -52,7 +52,6 @@ void Game::event(){
 		if(m_activity == MENU){
 			if(m_event.type == sf::Event::KeyPressed)
 			{
-				printf("entrer\n");
 				if (m_event.key.code == sf::Keyboard::Enter)
 				{
 					m_activity = GAME;
@@ -66,9 +65,21 @@ void Game::event(){
 					m_activity = GAME;
 			}
 		}
+
+
+
 		// EVENEMENT DANS LE JEU
 		else if(m_activity == GAME){
+			if(m_event.type == sf::Event::KeyPressed)
+			{
+				if (m_event.key.code == sf::Keyboard::Enter)
+				{
+					if(m_scene.onPressEnter() == 1)
+						m_musique.playZone(MUSIQUEJEUX);
+				}
+			}
 		}
+
 
 		//EVENEMENT DANS LA PAUSE
 		else if(m_activity == PAUSE){

@@ -14,3 +14,9 @@ bool everyTicks(int ticks){
 	//std::cout << clock()/CLOCKS_PER_SEC << '\n';
 	return false;
 }
+void wait(int time){
+	sf::Clock clock;
+	while(clock.getElapsedTime().asMilliseconds() <= time){
+
+	}
+}
