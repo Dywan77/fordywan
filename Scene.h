@@ -15,6 +15,10 @@ class Scene
 		void drawing(sf::RenderWindow &window);
 		void onSecond();
 		int onPressEnter();
+		void onGravity();
+		void onDown();
+		void onLeft();
+		void onRight();
 	protected:
 		void create();
 	private:
@@ -24,6 +28,9 @@ class Scene
 		Grille m_grille;
 		sf::Texture m_t_background;
 		sf::Sprite m_s_background;
+		
+		sf::Texture m_t_cache;
+		sf::Sprite m_s_cache;
 
 		sf::Sprite m_s_spriteWait;
 		sf::Texture m_t_spriteWait;

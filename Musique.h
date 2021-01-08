@@ -15,10 +15,7 @@ class Musique{
 	public:
 		Musique();
 		void playZone(int zone);
-		void stop()
-		{
-			m_music.stop();
-		}
+		void stop();
 		void intro(){
 			m_music.setLoop(false);
 			m_music.openFromFile("song/debut.wav");

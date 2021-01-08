@@ -14,3 +14,7 @@ void Musique::playZone(int zone){
 		exit; // erreur
 	m_music.play();
 }
+
+void Musique::stop(){
+	m_music.stop();
+}

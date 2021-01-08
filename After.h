@@ -5,25 +5,25 @@
 #include <iostream>
 #include "Cube.h"
 
+typedef struct Struct_Cubeid{
+	int a;
+	int b;
+	int c;
+} Struct_Cubeid;
 
 class After{
 
 	public:
 		After();
 		void draw(sf::RenderWindow &window);
-		void getID(int *a, int *b, int *c)
-		{
-			*a = one.getID();
-			*b = two.getID();
-			*c = three.getID();
-		}
+		Struct_Cubeid getID();	
 		void shuffle();
 	private:
 		sf::Texture m_t_after;
 		sf::Sprite m_s_after;
-		Cube one;
-		Cube two;
-		Cube three;
+		Cube m_one;
+		Cube m_two;
+		Cube m_three;
 		
 
 };

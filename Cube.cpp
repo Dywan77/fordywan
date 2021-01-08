@@ -18,19 +18,38 @@ Cube::Cube(sf::Vector2f position, int index)
 	m_texture.loadFromFile("image/jewel.png");
 	m_sprite.setTexture(m_texture);
 	m_sprite.setPosition(position);
-	this->changeID(index);
+	this->setId(index);
 }
+void Cube::setPosition(sf::Vector2i pos){
+	m_sprite.setPosition(pos.x, pos.y);
+}
+
+
 void Cube::draw(sf::RenderWindow &window)
 {
 	window.draw(m_sprite);
 }
-void Cube::changeID(int id)
+void Cube::setId(int id)
 {
 	m_index = id;
 	m_sprite.setTextureRect(sf::IntRect(id * 32, 0, 32, 32));
 }
-void Cube::changeID()
+void Cube::setId()
 {
 	m_index = rand() % (5 - 0 + 1);
 	m_sprite.setTextureRect(sf::IntRect(m_index * 32, 0, 32, 32));
+}
+int Cube::getId(){
+	return m_index;
+}
+sf::Vector2f Cube::getPosition()
+{
+	return m_sprite.getPosition();
+}
+sf::Sprite &Cube::getSprite()
+{
+	return m_sprite;
+}
+Cube *Cube::getPtr(){
+	return this;
 }

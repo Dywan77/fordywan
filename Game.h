@@ -33,6 +33,7 @@ class Game
 		sf::RenderWindow m_window;
 		Musique m_musique;
 		Scene m_scene;
+		bool m_boolChargement = true;
 };
 
 #endif

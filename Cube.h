@@ -15,19 +15,13 @@ class Cube{
 		Cube(int index);
 		Cube(sf::Vector2f position, int index);
 		void draw(sf::RenderWindow &window);
-		void changeID();
-		void changeID(int id);
-		int getID(){
-			return m_index;
-		}
-		sf::Vector2f getPosition()
-		{
-			return m_sprite.getPosition();
-		}
-		sf::Sprite &getSprite()
-		{
-			return m_sprite;
-		}
+		void setId();
+		void setId(int id);
+		void setPosition(sf::Vector2i pos);
+		int getId();
+		Cube *getPtr();
+		sf::Vector2f getPosition();
+		sf::Sprite &getSprite();
 	private:
 		int m_index = 0;
 		sf::Texture m_texture;

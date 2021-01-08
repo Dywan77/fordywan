@@ -43,6 +43,8 @@ void Game::event(){
 	if(m_activity == GAME){
 		if(everyTicks(850))
 			m_scene.onSecond();
+		if(everyTicks(800))
+			m_scene.onGravity();
 	}
 
 	//EVENEMENT DE SFML
@@ -72,13 +74,26 @@ void Game::event(){
 		else if(m_activity == GAME){
 			if(m_event.type == sf::Event::KeyPressed)
 			{
-				if (m_event.key.code == sf::Keyboard::Enter)
-				{
-					if(m_scene.onPressEnter() == 1)
-					{
+				if (m_event.key.code == sf::Keyboard::Enter){
+					if(m_boolChargement == true)
+						m_musique.stop();
+					if(m_scene.onPressEnter() == 1){
 						m_musique.playZone(MUSIQUEJEUX);
+						m_boolChargement = false;
 					}
 				}
+
+				if (m_event.key.code == sf::Keyboard::Right){
+					m_scene.onRight();	
+				}
+
+				if (m_event.key.code == sf::Keyboard::Left){
+					m_scene.onLeft();
+				}
+				if (m_event.key.code == sf::Keyboard::Down){
+					m_scene.onDown();
+				}
+
 			}
 		}
 

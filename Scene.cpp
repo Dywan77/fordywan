@@ -3,6 +3,9 @@
 Scene::Scene(){
 	m_t_background.loadFromFile("image/background.png");
 	m_s_background.setTexture(m_t_background);
+	
+	m_t_cache.loadFromFile("image/cache.png");
+	m_s_cache.setTexture(m_t_cache);
 
 	m_t_spriteWait.loadFromFile("image/startplay.png");
 	m_s_spriteWait.setTexture(m_t_spriteWait);
@@ -16,12 +19,23 @@ void Scene::drawing(sf::RenderWindow &window){
 	window.draw(m_s_background);
 	m_after.draw(window);
 	m_grille.draw(window);
+	window.draw(m_s_cache);
 
 	if(m_bool_waitbutton)
 		window.draw(m_s_spriteWait);
 }
 
 //EVENEMENT
+void Scene::onDown(){
+}
+void Scene::onLeft(){
+	if(m_bool_wait == false)
+		m_grille.onLeft();
+}
+void Scene::onRight(){
+	if(m_bool_wait == false)
+		m_grille.onRight();
+}
 
 void Scene::onSecond(){
 	if(m_bool_wait)
@@ -32,6 +46,10 @@ void Scene::onSecond(){
 			m_bool_waitbutton = true;
 	}
 	//grille.gravity  si ca renvoie 42 cest que cest tomber donc on renvoie after
+}
+void Scene::onGravity(){
+	if(m_bool_wait == false)
+		m_grille.onGravity();
 }
 
 int Scene::onPressEnter(){
@@ -44,6 +62,8 @@ int Scene::onPressEnter(){
 		wait(2000);
 		m_bool_waitbutton = false;
 		//on donne after a grille
+		m_grille.setAfter(m_after.getID());
+		m_after.shuffle();
 		return 1;
 	}
 	return 0;

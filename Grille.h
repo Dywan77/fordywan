@@ -4,15 +4,20 @@
 #include <iostream>
 #include "Cube.h"
 #include "Cursor.h"
+#include "After.h"
 #include <array>
 
 class Grille{
 	public:
 		Grille();
 		void draw(sf::RenderWindow &window);
-		void setAfter(int *a, int *b, int *c);
+		void setAfter(Struct_Cubeid s_cubeid);
+		void onGravity();
+		void onDown();
+		void onLeft();
+		void onRight();
 	protected:
-		int getCubeVide();
+		Cube *getCubeVide();
 
 	private:
 		sf::Texture m_t_grille;
