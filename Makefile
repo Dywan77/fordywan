@@ -1,4 +1,4 @@
-LIB=-lsfml-graphics -lsfml-system -lsfml-window -lsfml-audio
+LIB=-lsfml-graphics -lsfml-system -lsfml-window -lsfml-audio -std=c++17
 CC=g++
 SRC=$(wildcard *.cpp)
 APP=APP

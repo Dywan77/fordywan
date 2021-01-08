@@ -4,7 +4,7 @@
 #include <iostream>
 #include "Cube.h"
 #include "Cursor.h"
-#include <vector>
+#include <array>
 
 class Grille{
 	public:
@@ -17,7 +17,7 @@ class Grille{
 	private:
 		sf::Texture m_t_grille;
 		sf::Sprite m_s_grille;
-		Cube *m_tableauDeCube[81];
+		std::array<Cube, 81> m_tableauDeCube;
 		Cursor m_cursor;
 };
 #endif
