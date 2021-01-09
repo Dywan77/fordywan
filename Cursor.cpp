@@ -50,6 +50,15 @@ void Cursor::up(){
 }
 
 //EVENEMENT
+
+void Cursor::onkeypush(){
+	int id;
+	id = m_one->getId();
+	m_one->setId(m_two->getId());
+	m_two->setId(m_three->getId());
+	m_three->setId(id);
+}
+
 void Cursor::onLeft(){
 	if(!(m_s_selector.getPosition().x == 160))
 	{

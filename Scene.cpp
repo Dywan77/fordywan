@@ -26,6 +26,9 @@ void Scene::drawing(sf::RenderWindow &window){
 }
 
 //EVENEMENT
+void Scene::onkeypush(){
+	m_grille.onkeypush();
+}
 void Scene::onDown(){
 	onGravity();
 }
@@ -46,7 +49,6 @@ void Scene::onSecond(){
 		else
 			m_bool_waitbutton = true;
 	}
-	//grille.gravity  si ca renvoie 42 cest que cest tomber donc on renvoie after
 }
 void Scene::onGravity(){
 	if(m_bool_wait == false)

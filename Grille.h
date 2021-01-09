@@ -16,6 +16,7 @@ class Grille{
 		void onDown();
 		void onLeft();
 		void onRight();
+		void onkeypush();
 	protected:
 		Cube *getCubeVide();
 

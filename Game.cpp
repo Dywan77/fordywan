@@ -82,6 +82,9 @@ void Game::event(){
 						m_boolChargement = false;
 					}
 				}
+				if (m_event.key.code == sf::Keyboard::Z){
+					m_scene.onkeypush();	
+				}
 
 				if (m_event.key.code == sf::Keyboard::Right){
 					m_scene.onRight();	

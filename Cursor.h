@@ -14,6 +14,7 @@ class Cursor{
 		void onRight();
 		void up();
 		void onGravity();
+		void onkeypush();
 	protected:
 		void replace();
 	private:

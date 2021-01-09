@@ -53,6 +53,9 @@ Cube *Grille::getCubeVide(){
 }
 
 // EVENEMENT
+void Grille::onkeypush(){
+	m_cursor.onkeypush();
+}
 int Grille::onGravity(){
 	for(int i = 0; i < 81; i++)
 	{
@@ -67,14 +70,12 @@ int Grille::onGravity(){
 				tmpRect.top = tmpRect.top + 32;
 				if(m_tableauDeCube[n].getSprite().getGlobalBounds().intersects(tmpRect)){
 					//std::cout << "COLLISION";
-					//m_cursor.up();
 					return 42;
 				}
 			}
 			
 		}
 	}	
-	std::cout << "fin\n";
 	m_cursor.onGravity();
 	return 0;
 }

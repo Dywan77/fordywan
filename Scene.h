@@ -19,6 +19,7 @@ class Scene
 		void onDown();
 		void onLeft();
 		void onRight();
+		void onkeypush();
 	protected:
 		void create();
 	private:
