@@ -66,7 +66,7 @@ int Grille::onGravity(){
 				sf::FloatRect tmpRect = m_tableauDeCube[i].getSprite().getGlobalBounds();
 				tmpRect.top = tmpRect.top + 32;
 				if(m_tableauDeCube[n].getSprite().getGlobalBounds().intersects(tmpRect)){
-					std::cout << "COLLISION";
+					//std::cout << "COLLISION";
 					//m_cursor.up();
 					return 42;
 				}
@@ -83,9 +83,37 @@ void Grille::onDown(){
 }
 
 void Grille::onLeft(){
+	for(int i = 0; i < 81; i++)
+	{
+		if(m_tableauDeCube[i].isOnCursor() == false){continue;}//que le cursorblock
+		
+		for(int n = 0; n < 81; n++){
+			if(m_tableauDeCube[n].isOnCursor() == true){continue;}//que les blockcarte
+			sf::FloatRect tmpRect = m_tableauDeCube[i].getSprite().getGlobalBounds();
+			
+			tmpRect.left = tmpRect.left - 32;
+			if(m_tableauDeCube[n].getSprite().getGlobalBounds().intersects(tmpRect)){
+				return;
+			}
+		}
+	}
 	m_cursor.onLeft();
 }
 
 void Grille::onRight(){
+	for(int i = 0; i < 81; i++)
+	{
+		if(m_tableauDeCube[i].isOnCursor() == false){continue;}//que le cursorblock
+		
+		for(int n = 0; n < 81; n++){
+			if(m_tableauDeCube[n].isOnCursor() == true){continue;}//que les blockcarte
+			sf::FloatRect tmpRect = m_tableauDeCube[i].getSprite().getGlobalBounds();
+			
+			tmpRect.left = tmpRect.left + 32;
+			if(m_tableauDeCube[n].getSprite().getGlobalBounds().intersects(tmpRect)){
+				return;
+			}
+		}
+	}
 	m_cursor.onRight();
 }
