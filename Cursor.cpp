@@ -42,6 +42,12 @@ void Cursor::replace(){
 		m_three->setPosition(sf::Vector2i(32*8,64));
 	}
 }
+void Cursor::up(){
+		m_s_selector.move(0,-32);
+		m_one->getSprite().move(0,-32);
+		m_two->getSprite().move(0,-32);
+		m_three->getSprite().move(0,-32);
+}
 
 //EVENEMENT
 void Cursor::onLeft(){

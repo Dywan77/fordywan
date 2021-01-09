@@ -7,12 +7,12 @@ Grille::Grille(){
 	for(int i = 0; i < 81; i++)
 	{
 		m_tableauDeCube[i].setId(CNULL);	
-		std::cout << "ici: " << m_tableauDeCube[i].getId() << '\n';
+		//std::cout << "ici: " << m_tableauDeCube[i].getId() << '\n';
 	}
 	for(int i = 0; i < 81; i++)
 	{
 		m_tableauDeCube[i].setisOnCursor(false);	
-		std::cout << "ici: " << m_tableauDeCube[i].getId() << '\n';
+		//std::cout << "ici: " << m_tableauDeCube[i].getId() << '\n';
 	}
 }
 
@@ -59,9 +59,19 @@ int Grille::onGravity(){
 		if(m_tableauDeCube[i].isOnCursor() == true){
 			if(m_tableauDeCube[i].getPosition().y >= 480)
 			{
-				std::cout << "TOUCH " << m_tableauDeCube[i].isOnCursor() << '\n';
 				return 42;
 			}
+			for(int n = 0; n < 81; n++){
+				if(m_tableauDeCube[n].isOnCursor() == true){continue;}
+				sf::FloatRect tmpRect = m_tableauDeCube[i].getSprite().getGlobalBounds();
+				tmpRect.top = tmpRect.top + 32;
+				if(m_tableauDeCube[n].getSprite().getGlobalBounds().intersects(tmpRect)){
+					std::cout << "COLLISION";
+					//m_cursor.up();
+					return 42;
+				}
+			}
+			
 		}
 	}	
 	std::cout << "fin\n";

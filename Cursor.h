@@ -12,6 +12,7 @@ class Cursor{
 		void setAfter(Cube *a, Cube *b, Cube *c, Struct_Cubeid struct_cubeid);
 		void onLeft();
 		void onRight();
+		void up();
 		void onGravity();
 	protected:
 		void replace();

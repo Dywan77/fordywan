@@ -27,6 +27,7 @@ void Scene::drawing(sf::RenderWindow &window){
 
 //EVENEMENT
 void Scene::onDown(){
+	onGravity();
 }
 void Scene::onLeft(){
 	if(m_bool_wait == false)
