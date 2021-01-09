@@ -19,11 +19,14 @@ class Cube{
 		void setId(int id);
 		void setPosition(sf::Vector2i pos);
 		int getId();
+		bool isOnCursor();
+		void setisOnCursor(bool boolean);
 		Cube *getPtr();
 		sf::Vector2f getPosition();
 		sf::Sprite &getSprite();
 	private:
 		int m_index = 0;
+		bool m_isOnCursor = false;
 		sf::Texture m_texture;
 		sf::Sprite m_sprite;
 

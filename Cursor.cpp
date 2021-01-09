@@ -17,17 +17,19 @@ void Cursor::draw(sf::RenderWindow &window){
 }
 void Cursor::setAfter(Cube *a, Cube *b, Cube *c, Struct_Cubeid struct_cubeid){
 
+	//on pointe sur les cubes donnes
 	m_one = a;
 	m_two = b;
 	m_three = c;
-	std::cout << "ici ca crash:" << '\n';
-	std::cout << m_one << '\n';
-	std::cout << m_two << '\n';
-	std::cout << m_three << '\n';
+	//On lui donne l'ID quil y a dans after
 	m_one->setId(struct_cubeid.a);
 	m_two->setId(struct_cubeid.b);
 	m_three->setId(struct_cubeid.c);
-	std::cout << "Fin ?" << '\n';
+	//On definit ce cube comme etant dans le cursor
+	m_one->setisOnCursor(true);
+	m_two->setisOnCursor(true);
+	m_three->setisOnCursor(true);
+	//on replace le curseur en haut a droite
 	replace();
 
 }
@@ -61,11 +63,11 @@ void Cursor::onRight(){
 	}
 }
 void Cursor::onGravity(){
-	if(!(m_s_selector.getPosition().x == 320))
-	{
+	//if(!(m_s_selector.getPosition().y == 416))
+	//{
 		m_s_selector.move(0,32);
 		m_one->getSprite().move(0,32);
 		m_two->getSprite().move(0,32);
 		m_three->getSprite().move(0,32);
-	}	
+	//}	
 }

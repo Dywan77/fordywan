@@ -5,6 +5,7 @@ Cube::Cube()
 	m_texture.loadFromFile("image/jewel.png");
 	m_sprite.setTexture(m_texture);
 	m_sprite.setTextureRect(sf::IntRect(0, 0, 32, 32));
+	m_isOnCursor = false;
 }
 Cube::Cube(int index)
 {
@@ -52,4 +53,10 @@ sf::Sprite &Cube::getSprite()
 }
 Cube *Cube::getPtr(){
 	return this;
+}
+bool Cube::isOnCursor(){
+	return m_isOnCursor;
+}
+void Cube::setisOnCursor(bool boolean){
+	m_isOnCursor = boolean;
 }

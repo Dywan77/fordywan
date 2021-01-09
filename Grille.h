@@ -12,7 +12,7 @@ class Grille{
 		Grille();
 		void draw(sf::RenderWindow &window);
 		void setAfter(Struct_Cubeid s_cubeid);
-		void onGravity();
+		int onGravity();
 		void onDown();
 		void onLeft();
 		void onRight();

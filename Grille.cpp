@@ -9,6 +9,11 @@ Grille::Grille(){
 		m_tableauDeCube[i].setId(CNULL);	
 		std::cout << "ici: " << m_tableauDeCube[i].getId() << '\n';
 	}
+	for(int i = 0; i < 81; i++)
+	{
+		m_tableauDeCube[i].setisOnCursor(false);	
+		std::cout << "ici: " << m_tableauDeCube[i].getId() << '\n';
+	}
 }
 
 void Grille::draw(sf::RenderWindow &window){
@@ -24,6 +29,16 @@ void Grille::draw(sf::RenderWindow &window){
 	}
 }
 
+void Grille::setAfter(Struct_Cubeid s_cubeid){
+	for(int i = 0; i < 81; i++)
+	{
+		m_tableauDeCube[i].setisOnCursor(false);	
+	}
+	m_cursor.setAfter(getCubeVide(), getCubeVide(), getCubeVide(), s_cubeid);
+}
+
+
+//PROTECTED
 Cube *Grille::getCubeVide(){
 	for(int i = 0; i < 81; i++)
 	{
@@ -36,20 +51,31 @@ Cube *Grille::getCubeVide(){
 	}
 	return NULL;
 }
-void Grille::setAfter(Struct_Cubeid s_cubeid){
-
-	m_cursor.setAfter(getCubeVide(), getCubeVide(), getCubeVide(), s_cubeid);
-}
 
 // EVENEMENT
-void Grille::onGravity(){
+int Grille::onGravity(){
+	for(int i = 0; i < 81; i++)
+	{
+		if(m_tableauDeCube[i].isOnCursor() == true){
+			if(m_tableauDeCube[i].getPosition().y >= 480)
+			{
+				std::cout << "TOUCH " << m_tableauDeCube[i].isOnCursor() << '\n';
+				return 42;
+			}
+		}
+	}	
+	std::cout << "fin\n";
 	m_cursor.onGravity();
+	return 0;
 }
+
 void Grille::onDown(){
 }
+
 void Grille::onLeft(){
 	m_cursor.onLeft();
 }
+
 void Grille::onRight(){
 	m_cursor.onRight();
 }

@@ -49,7 +49,12 @@ void Scene::onSecond(){
 }
 void Scene::onGravity(){
 	if(m_bool_wait == false)
-		m_grille.onGravity();
+	{
+		if(m_grille.onGravity() == 42){
+			m_grille.setAfter(m_after.getID());
+			m_after.shuffle();
+		}
+	}
 }
 
 int Scene::onPressEnter(){
