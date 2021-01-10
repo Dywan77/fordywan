@@ -11,3 +11,5 @@ clean:
 
 mrproper: clean
 	rm -rf *.o
+
+//voila c'est fait, j'ai copier
